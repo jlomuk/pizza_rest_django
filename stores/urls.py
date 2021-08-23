@@ -5,6 +5,6 @@ app_name = 'stores'
 
 
 urlpatterns = [
-    path('', ),
+    # path('', ),
 
 ]

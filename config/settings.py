@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     #my app
-    'store.apps.StoresConfig',
+    'stores.apps.StoresConfig',
 ]
 
 MIDDLEWARE = [

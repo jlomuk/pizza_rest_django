@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Pizzeria
+
+
+@admin.register(Pizzeria)
+class PizzeriaAdmin(admin.ModelAdmin):
+    pass
