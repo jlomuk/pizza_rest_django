@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "pizzeria": "The Empire pizza",
+        "city": "New Your"
+    },
+    {
+        "id": 2,
+        "pizzeria": "Urbs in horto pizza",
+        "city": "Chicago"
+    },
+    {
+        "id": 3,
+        "pizzeria": "Holywood pizza",
+        "city": "Los Angeles"
+    }
+
+]
