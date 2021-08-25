@@ -21,7 +21,6 @@ class PizzeriaRetrieveAPIView(PizzeriaMixin, generics.RetrieveAPIView):
 class PizzeriaCreateAPIView(PizzeriaMixin, generics.CreateAPIView):
     pass
 
-
 class PizzeriaRetrieveUpdateAPIView(PizzeriaMixin, generics.RetrieveUpdateAPIView):
     pass
 
