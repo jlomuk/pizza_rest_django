@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
+import PizzaUpdate from './pizzeriasupdate.js';
 
 
 class PizzaDetail extends Component {
+    
     constructor(props){
         super(props);
         this.state = {
             showComponent: false
         };
+        this.updatePizzeriaDetails = this.updatePizzeriaDetails.bind(this);
     }
 
     updatePizzeriaDetails(){
@@ -25,7 +28,7 @@ class PizzaDetail extends Component {
                 <button style={{backgroundColor: "white"}} onClick={()=> this.updatePizzeriaDetails()}>
                     Update
                 </button>
-                {this.state.showComponent ? <PizzaUpdate pizzariaUpdate={p}/> : null}
+                {this.state.showComponent ? <PizzaUpdate pizzaUpdate={p}/> : null}
             </div>
         );
     }
