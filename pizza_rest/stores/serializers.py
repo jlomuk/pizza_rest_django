@@ -17,11 +17,12 @@ class PizzeriaListSerializer(serializers.ModelSerializer):
         )
 
     def get_absolute_url(self, obj):
-        return reverse('stores:pizzeria_detail', args=[obj.pk]) 
+        return reverse('stores:pizzeria_detail', args=[obj.pk])
 
 
 class PizzeriaDetailSerializer(serializers.ModelSerializer):
     update = serializers.SerializerMethodField()
+    delete = serializers.SerializerMethodField()
 
     class Meta:
         model = Pizzeria
@@ -32,11 +33,14 @@ class PizzeriaDetailSerializer(serializers.ModelSerializer):
             'zip_code',
             'description',
             'website',
-            'phone', 
+            'phone',
             'email',
             'update',
+            'delete',
         )
 
     def get_update(self, obj):
         return reverse('stores:pizzeria_update', args=[obj.pk])
-   
+
+    def get_delete(self, obj):
+        return reverse('stores:pizzeria_delete', args=[obj.pk])
