@@ -1,18 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import ListView from './src/screens/components/list_view';
+import DetailView from './src/screens/components/detail_view';
+
+
+const Stack = createStackNavigator();
 
 export default function App() {
-  let mytext = 'Hello my first app'
   return (
-    <View style={styles.container}>
-      <Image style={styles.pizzaImage}
-              source={{uri: 'https://book.nyc3.digitaloceanspaces.com/pizza.jpg',}} />
-      <Text style={styles.baseText}>Pizza vs Pizza App</Text>
-      <Text style={styles.newText}>{mytext}</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <NavigationContainer>
+     <Stack.Navigator>
+       {<Stack.Screen name='Home' component={ListView}/>}
+       {<Stack.Screen name='Detail' component={DetailView}/>}
+     </Stack.Navigator>
+   </NavigationContainer>
+   )
 }
 
 const styles = StyleSheet.create({
@@ -21,18 +26,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  baseText: {
-    color: 'navy',
-    fontSize: 30,
-    fontStyle: 'italic',
-  },
-  newText: {
-    color: 'red',
-    fontSize: 20,
-  },
-  pizzaImage: {
-    width: 200,
-    height: 200,
   },
 });
