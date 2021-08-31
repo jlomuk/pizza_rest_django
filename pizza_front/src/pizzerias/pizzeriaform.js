@@ -23,12 +23,7 @@ class PizzaForm extends Component{
 
     handleSubmit(event){
         event.preventDefault();
-        axios.post('http://127.0.0.1:8000'.concat('/sendemail'), {
-            subject: 'React',
-            mail_to: 'jlomuk@bk.ru',
-            body: {},
-
-         })
+        axios.post(process.env.REACT_APP_URL.concat('/stores/create/'), this.state)
         .then(response => console.log(response))
         .catch(error => console.log(error));
     }
